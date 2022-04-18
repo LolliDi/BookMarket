@@ -183,11 +183,5 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SearchPercent\SearchPercent.csproj">
-      <Project>{3a0bc3ce-937b-4026-83d5-a71819a549c5}</Project>
-      <Name>SearchPercent</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

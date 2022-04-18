@@ -1,6 +1,6 @@
 ﻿namespace SearchPercent
 {
-    public static class SearchPercent
+    public class SearchPercent
     {
         public float Search(int count)
         {
