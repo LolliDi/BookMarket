@@ -40,7 +40,7 @@ namespace BookMarket.Pages
 
         private void GoBascket_Click(object sender, RoutedEventArgs e)
         {
-
+            FrameClass.fr.Navigate(new BascketPage(this, ref books));
         }
     }
 }

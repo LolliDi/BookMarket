@@ -33,7 +33,6 @@
                                     <TextBlock Text="{Binding Cost, StringFormat={}Цена: {0} руб.}" HorizontalAlignment="Left"/>
                                     <TextBlock Text="{Binding GetCount}" HorizontalAlignment="Right"/>
                                 </StackPanel>
-
                                 <Button Uid="{Binding Id}" Click="Buy_Click">Заказать</Button>
 
                             </StackPanel>

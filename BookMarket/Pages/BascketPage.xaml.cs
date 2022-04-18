@@ -32,6 +32,7 @@ namespace BookMarket.Pages
             InitializeComponent();
             mm = Mm;
             books = b;
+            ListViewBascket.ItemsSource = books.ToList();
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

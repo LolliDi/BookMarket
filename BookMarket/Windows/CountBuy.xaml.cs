@@ -41,7 +41,7 @@ namespace BookMarket.Windows
             Books book = DBCl.db.Books.FirstOrDefault(x => x.Id == id);
             try
             {
-                if (book.CountInMarket+ book.CountInStock <= Convert.ToInt32(TextBoxCount.Text))
+                if ((book.CountInMarket+ book.CountInStock) >= Convert.ToInt32(TextBoxCount.Text))
                 {
                     if (books.Count > 0)
                     {

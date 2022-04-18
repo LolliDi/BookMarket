@@ -11,10 +11,13 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="8*"/>
+            <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <Button Click="Back_Click">Назад</Button>
-        <ListView Grid.Row="1">
+        <StackPanel Orientation="Horizontal">
+            <Button Click="Back_Click">Назад</Button>
+            <Button Click="Back_Click" Width="150">Подтвердить</Button>
+        </StackPanel>
+        <ListView Name="ListViewBascket" Grid.Row="1">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <WrapPanel/>
@@ -24,14 +27,16 @@
                 <DataTemplate>
                     <Border Style="{StaticResource BorderListViewItems}">
                         <StackPanel Orientation="Horizontal">
-                            <Image Source="{Binding b.GetImage}" Width="200" Height="300" Stretch="Fill"/>
+                            <Image Source="{Binding B.GetImage}" Width="200" Height="300" Stretch="Fill"/>
                             <StackPanel Orientation="Vertical">
-                                <TextBlock Text="{Binding b.GetNameAndGenre}"/>
-                                <TextBlock Text="{Binding b.Author, StringFormat={}Автор: {0}}"/>
+                                <TextBlock Text="{Binding B.GetNameAndGenre}"/>
+                                <TextBlock Text="{Binding B.Author, StringFormat={}Автор: {0}}"/>
+                                <TextBlock Text="{Binding Count, StringFormat={}Количество: {0} шт.}" HorizontalAlignment="Right"/>
                                 <StackPanel Orientation="Horizontal">
+                                    <TextBlock Text="Цена:" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="{Binding OldPrice}" HorizontalAlignment="Left" TextDecorations="Strikethrough"/>
+                                    <TextBlock Text="{Binding NewPrice, StringFormat={} {0} руб.}" HorizontalAlignment="Left"/>
                                     
-                                    <TextBlock Text="{Binding b.Cost, StringFormat={}Цена: {0} руб.}" HorizontalAlignment="Left"/>
-                                    <TextBlock Text="{Binding Count, StringFormat={}Количество: {0} шт.}" HorizontalAlignment="Right"/>
                                 </StackPanel>
                             </StackPanel>
                         </StackPanel>
