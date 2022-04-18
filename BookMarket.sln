@@ -5,6 +5,8 @@ VisualStudioVersion = 17.1.32328.378
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookMarket", "BookMarket\BookMarket.csproj", "{0595A071-54EB-4CCD-A3DD-7E122C899C32}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchPercent", "SearchPercent\SearchPercent.csproj", "{3A0BC3CE-937B-4026-83D5-A71819A549C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{0595A071-54EB-4CCD-A3DD-7E122C899C32}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0595A071-54EB-4CCD-A3DD-7E122C899C32}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0595A071-54EB-4CCD-A3DD-7E122C899C32}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0BC3CE-937B-4026-83D5-A71819A549C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0BC3CE-937B-4026-83D5-A71819A549C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0BC3CE-937B-4026-83D5-A71819A549C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0BC3CE-937B-4026-83D5-A71819A549C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

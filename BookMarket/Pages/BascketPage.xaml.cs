@@ -1,4 +1,5 @@
-﻿using BookMarket.Scripts;
+﻿using BookMarket.ForDB;
+using BookMarket.Scripts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace BookMarket.Pages
         }
         MainMarket mm;
         List<Book> books;
+        bool onStock = false;
         public BascketPage(MainMarket Mm, ref List<Book> b)
         {
             InitializeComponent();
@@ -37,6 +39,34 @@ namespace BookMarket.Pages
 
         private void Back_Click(object sender, RoutedEventArgs e)
         {
+            FrameClass.fr.Navigate(mm);
+        }
+
+        private void Buy_Click(object sender, RoutedEventArgs e)
+        {
+            string s = "";
+            foreach (Book b in books)
+            {
+                s += b.b.Title + b.Count + "шт.\n";
+                Books B = DBCl.db.Books.FirstOrDefault(x => x.Id == b.b.Id);
+                if(B.CountInMarket<b.Count)
+                {
+                    b.count -= B.CountInMarket;
+                    B.CountInMarket = 0;
+                    B.CountInStock -= b.Count;
+                    onStock = true;
+                }
+                else
+                {
+                    B.CountInMarket -=b.Count;
+                }
+                
+                DBCl.db.SaveChanges();
+                
+            }
+
+            MessageBox.Show(("Ваш заказ оформлен, вы заказали: " + s + "\n" + (onStock ? "Заказ будет через 72 часа." : "Можете забрать заказ на кассе.")), "Оформлено");
+            
             FrameClass.fr.Navigate(mm);
         }
     }
