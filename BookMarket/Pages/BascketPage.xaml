@@ -1,0 +1,43 @@
+﻿<Page x:Class="BookMarket.Pages.BascketPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:BookMarket.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BascketPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Button Click="Back_Click">Назад</Button>
+        <ListView Grid.Row="1">
+            <ListView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <WrapPanel/>
+                </ItemsPanelTemplate>
+            </ListView.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border Style="{StaticResource BorderListViewItems}">
+                        <StackPanel Orientation="Horizontal">
+                            <Image Source="{Binding b.GetImage}" Width="200" Height="300" Stretch="Fill"/>
+                            <StackPanel Orientation="Vertical">
+                                <TextBlock Text="{Binding b.GetNameAndGenre}"/>
+                                <TextBlock Text="{Binding b.Author, StringFormat={}Автор: {0}}"/>
+                                <StackPanel Orientation="Horizontal">
+                                    
+                                    <TextBlock Text="{Binding b.Cost, StringFormat={}Цена: {0} руб.}" HorizontalAlignment="Left"/>
+                                    <TextBlock Text="{Binding Count, StringFormat={}Количество: {0} шт.}" HorizontalAlignment="Right"/>
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Grid>
+</Page>
